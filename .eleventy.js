@@ -7,7 +7,6 @@ const isProduction = process.env.NODE_ENV === 'production'
 module.exports = function (eleventyConfig) {
   // Copying files
   eleventyConfig.addPassthroughCopy('src/favicon.ico');
-  eleventyConfig.addPassthroughCopy('src/robots.txt');
   eleventyConfig.addPassthroughCopy('src/sw.js');
   eleventyConfig.addPassthroughCopy({
     'src/assets/images': 'assets/images',
