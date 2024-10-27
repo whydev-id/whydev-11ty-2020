@@ -1,0 +1,23 @@
+---
+layout: base.njk
+title: My Notes
+description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+permalink: notes/index.html
+---
+<div class="ws-content">
+  <div class="ws-content-head">
+    <h1>My Notes</h1>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+  </div>
+
+  <div class="ws-content-body">
+    <ul class="ws-post">
+      {% for post in collections.notes | reverse -%}
+      <li class="ws-post-list">
+        <time class="ws-post-date" datetime="{{ post.date | convertDate('DD-MM-YYYY, h:mm:ss') }}">{{ post.date | convertDate('DD MMMM YYYY') }}</time>
+        <h2 class="ws-post-title"><a class="ws-post-link" href="{{ post.data.page.url }}">{{ post.data.title }}</a></h2>
+      </li>
+      {%- endfor %}
+    </ul>
+  </div>
+</div>

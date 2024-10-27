@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% if title %}{{ title }} | {% endif %}{{ site.title }}</title>
+    <link rel="preload" href="{{ '/assets/fonts/Cabin-BoldItalic.woff2' | url }}" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="{{ '/assets/fonts/MartelSans-Regular.woff2' | url }}" as="font" type="font/woff2" crossorigin>
+    {% include "components/meta.njk"  %}
+    <link rel="preload" href="{{ '/assets/styles/main.css' | url }}" as="style">
+    <link rel="stylesheet" href="{{ '/assets/styles/main.css' | url }}" type="text/css">
+</head>
+<body>
+    <div class="ws-layout">
+        {% include "components/header.njk" %}
+
+        <main class="ws-main">
+            <div class="ws-container">{{ content | safe }}</div>
+        </main>
+
+        {% include "components/footer.njk" %}
+    </div>
+
+    {# Main JS #}
+    <script src="/assets/scripts/main.js"></script>
+</body>
+</html>

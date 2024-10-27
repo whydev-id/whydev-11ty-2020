@@ -1,0 +1,23 @@
+---
+permalink: /webmanifest.json
+---
+{
+    "name": "{{ author.name }}",
+    "short_name": "JohnDoe",
+    "theme_color": "{{ site.theme_color }}",
+    "background_color": "{{ site.theme_color }}",
+    "display": "standalone",
+    "start_url": "/index.html",
+    "orientation": "portrait-primary",
+    "splash_pages": null,
+    "icons": [
+        {%- for icon in site.icon_sizes %}
+        {
+            "src": "/assets/images/base/{{icon}}.png",
+            "sizes": "{{icon}}x{{icon}}",
+            "type": "image/png",
+            "purpose": "any maskable" 
+        }{{ '' if loop.last else ',' }}
+        {%- endfor -%}
+    ]
+}

@@ -1,0 +1,25 @@
+<header class="ws-header">
+    <div class="ws-container">
+        <div class="ws-header-wrapper">
+            <a href="/" class="ws-header-icon" rel="home" aria-label="Homepage">
+                {% include "components/icon/icon_logo.njk" %}
+            </a>
+
+            <div class="ws-header-content">
+                <button id="toggleTheme" class="ws-header-theme" aria-label="Toggle Theme" type="button">
+                    {% include "components/icon/icon_moon.njk" %}
+                </button>
+
+                <button class="ws-header-toggle" id="toggleMenu" aria-label="Toggle Menu" type="button">
+                    <span class="ws-header-bars">
+                        <span class="ws-header-bar"></span>
+                        <span class="ws-header-bar"></span>
+                        <span class="ws-header-bar"></span>
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    {% include "components/navigation.njk" %}
+</header>

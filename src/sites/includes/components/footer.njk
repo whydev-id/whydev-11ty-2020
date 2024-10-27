@@ -1,0 +1,27 @@
+<footer class="ws-footer">
+    <div class="ws-container">
+        <div class="ws-footer-info">
+            <div class="ws-footer-list">
+                <strong class="ws-footer-list-text">John Doe</strong>
+                <span class="ws-footer-list-text">© Copyright 2020</span>
+            </div>
+
+            <div class="ws-footer-list">
+                <strong class="ws-footer-list-text">Contact</strong>
+
+                {% for i, social in author.socials %}
+                    <a href="{{ social.url }}" target="blank" class="ws-footer-list-link" rel="noopener noreferrer">{{ i | capitalize }}</a>
+                    <span>/</span>
+                {% endfor %}
+
+                <a href="mailto:{{ author.email }}" target="blank" class="ws-footer-list-link" rel="noopener noreferrer">Email</a>
+            </div>
+
+            <div class="ws-footer-list">
+                <strong class="ws-footer-list-text">Powered by</strong>
+                <a href="https://www.11ty.dev/" target="blank" rel="noopener noreferrer" class="ws-footer-list-link">11ty</a>
+                <a href="https://mozilla.github.io/nunjucks/" target="blank" rel="noopener noreferrer" class="ws-footer-list-link">Nunjucks</a>
+            </div>
+        </div>
+    </div>
+</footer>

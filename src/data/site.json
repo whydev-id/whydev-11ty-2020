@@ -1,0 +1,10 @@
+{
+    "title": "John Doe - Personal website, portfolio dan blog",
+    "description": "Personal website, portfolio dan blog",
+    "url": "https://yourdoimain.example",
+    "theme_color": "#2f4858",
+    "icon_sizes": [
+        192,
+        512
+    ]
+}

@@ -1,0 +1,27 @@
+---
+layout: base.njk
+---
+<article class="ws-content">
+  <header class="ws-content-head">
+    <h1>{{ title }}</h1>
+    <p class="ws-post-date">
+      Posted:
+      <time datetime="{{ page.date | convertDate('DD-MM-YYYY, h:mm:ss') }}">{{ page.date | convertDate('DD MMMM YYYY') }}</time>
+    </p>
+
+    {% if updated %}
+    <p class="ws-post-date">
+      Updated:
+      <time class="ws-post-date" datetime="{{ updated | convertDate('DD-MM-YYYY, h:mm:ss') }}">{{ updated | convertDate('DD MMMM YYYY') }}</time>
+    <p>
+    {% endif %}
+
+    {% if subtitle %}
+    <p>{{ subtitle }}</p>
+    {% endif %}
+  </header>
+
+  <div class="ws-content-body">
+    {{ content | safe }}
+  </div>
+</article>

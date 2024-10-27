@@ -1,0 +1,29 @@
+{# SEO #}
+<meta name="description" content="{% if description %}{{ description }}{% else %}{{ site.description }}{% endif %}">
+<link href="/webmanifest.json" rel="manifest">
+
+{# General SEO #}
+<link rel="canonical" href="{{ site.url }}">
+
+{# Favicon #}
+<link rel="shortcut icon" href="/favicon.ico">
+<link rel="apple-touch-icon" href="{{ author.avatar }}">
+<meta name="theme-color" content="{{ site.theme_color }}">
+<meta name="apple-mobile-web-app-status-bar" content="{{ site.theme_color }}">
+
+{# JSON LD #}
+<script type="application/ld+json">
+{
+    "name":"{{ author.name }}",
+    "description":"{{ site.description }}",
+    "author": {
+        "@type":"Person",
+        "name":"{{ author.name }}"
+    },
+    "@type":"WebSite",
+    "url":"{{ site.url }}",
+    "image":"{{ site.url }}{{ site.avatar }}",
+    "headline":"{{ site.title }}",
+    "@context":"http://schema.org"
+}
+</script>
