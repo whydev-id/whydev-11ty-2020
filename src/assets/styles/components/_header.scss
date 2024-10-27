@@ -1,0 +1,95 @@
+.ws-header{
+    // wrapper of header component
+    &-wrapper
+    {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 20px 0;
+
+    }
+
+    &-content{
+        display: flex;
+    }
+
+    // Logo website
+    &-icon{
+        display: inline-block;
+        z-index: 11;
+
+        &-img{
+            width: 65px;
+            height: 65px;
+        }
+    }
+
+    // Toggle Theme
+    &-theme{
+        cursor: pointer;
+        border: none;
+        padding: 0;
+        margin: 0 15px 0 0;
+        background-color: transparent;
+        
+        &-icon{
+            padding: 5px;
+            border-radius: 6px;
+            height: 45px;
+            width: 45px;
+            fill: var(--color-moon);
+        }
+    }
+
+    // Toggle Bars
+    &-toggle
+    {
+        cursor: pointer;
+        border: none;
+        background-color: transparent;
+        padding: 0;
+        z-index: 11;
+        // position: absolute;
+
+        &_isActive{           
+            .ws-header-bar{
+                &:nth-child(1){
+                    transform: translateY(8px) translateX(0) rotate(45deg);
+                }
+                
+                &:nth-child(2){
+                    opacity: 0;
+                    transform: translateX(10px);
+                    transition: opacity .4s, transform .1s $in-out-transition-fast-1;
+                }
+                
+                &:nth-child(3){
+                    transform: translateY(-8px) translateX(0) rotate(-45deg);
+                }
+            }
+        }
+    }
+
+    &-bars{
+        border-radius: 6px;
+        padding:10px;
+        height: 45px;
+        width: 45px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+        align-items: center;
+    }
+
+    &-bar{
+        height: 4px;
+        width: 25px;
+        display: block;
+        transition: all .35s ease;
+        background-color: var(--color-text);
+        
+        &:nth-child(2){
+            width: 15px;
+        }
+    }
+}

@@ -1,0 +1,19 @@
+// Default of theme is light (:root)
+// Base theme color
+:root{
+    --color-background: #ffffff;
+    --color-text: #2f4858;
+    --color-link: #ff5964;
+    --color-link-hover: #fb2836;
+    --color-border: #efefef;
+    --color-moon: #2f4858;
+}
+
+[data-theme="dark"]{
+    --color-background: #222831;
+    --color-text: #eeeeee;
+    --color-link: #f75757;
+    --color-link-hover: #f96c67;
+    --color-border: #393e46;
+    --color-moon: #ffb400;
+}

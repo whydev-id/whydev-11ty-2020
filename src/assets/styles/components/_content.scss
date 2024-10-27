@@ -1,0 +1,21 @@
+.ws-content{
+  &-head{
+    &-icon{
+      width: 100%;
+      height: 250px;
+      margin: 0 0 30px;
+    }
+  }
+
+  &-body{
+    margin: 20px 0;
+  }
+}
+
+@include media-breakpoint('medium') {
+  .ws-content{
+    &-body{
+      margin: 40px 0 20px;
+    }
+  }
+}

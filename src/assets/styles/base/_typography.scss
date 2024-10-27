@@ -1,0 +1,71 @@
+//  --- heading ---
+$f_heading: (
+	h1: 32,
+	h2: 24,
+	h3: 18,
+	h4: 16,
+	h5: 16,
+	h6: 16
+);
+
+@each $element, $size in $f_heading
+{
+	#{$element}
+	{
+        margin: 0 0 15px;
+        font-family: $font-heading;
+        font-size: ($size / 16)+em;
+        line-height: ($size * 1.2)+px;
+        text-rendering: optimizeLegibility;
+        color: var(--color-text);
+	}
+}
+
+a, button, input, textarea{
+	&:focus{
+		outline: 6px solid var(--color-link);
+	}
+}
+
+a{
+	color: var(--color-link);
+	text-decoration: none;
+	transition: color 0.3s $in-out-transition;
+
+	&:focus,
+	&:hover{
+		color: var(--color-link-hover);
+	}
+}
+
+code, kbd, samp{
+	padding: 0 5px;
+	background-color: var(--color-moon);
+	color: var(--color-border);
+	border-radius: 4px;
+}
+
+blockquote{
+	margin: 0 0 20px;
+	padding: 5px 15px 5px 20px;
+	border-radius: 6px;
+	background-color: var(--color-border);
+	color: var(--color-text);
+	position: relative;
+
+	&::before{
+		content: "";
+    display: block;
+    width: 10px;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    background-color: var(--color-moon);
+    top: 0;
+    border-radius: 6px 0 0 6px;
+	}
+}
+
+figcaption{
+	font-size: 12px;
+}

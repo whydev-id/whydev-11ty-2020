@@ -1,0 +1,45 @@
+::selection {
+    background-color: var(--color-text);
+    color: var(--color-background);
+}
+
+body{
+    font-family: $font-paragraf;
+    font-size: 16px; // base font
+    text-rendering: optimizeLegibility;
+    transition: background-color .3s;
+    background-color: var(--color-background);
+    color: var(--color-text);
+
+    &.noScroll
+	{
+		overflow-y: hidden;
+	}
+}
+
+.ws-container{
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 90%;
+}
+
+.ws-main{
+    margin: 40px 0;
+    display: flex;
+    align-items: center;
+    min-height: calc(100vh - 280px);
+}
+
+// FOCUS-VISIBLE POLYFILL
+.js-focus-visible :focus:not(.focus-visible) {
+    outline: none;
+}
+
+.js-focus-visible .focus-visible {
+}
+
+@include media-breakpoint('medium') {
+    .ws-main{
+        min-height: calc(100vh - 298px);
+    }
+}

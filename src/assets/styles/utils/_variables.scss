@@ -1,0 +1,16 @@
+// Breakpoints
+$breakpoints:(
+    'small':576px,
+    'medium':768px,
+    'large':992px,
+    'extra':1200px
+);
+
+// font family
+$font-heading: 'Cabin';
+$font-paragraf: 'Martel Sans';
+
+// Transition
+$in-out-transition: cubic-bezier(0.62, 0.03, 0.43, 1);
+$in-out-transition-fast-1: cubic-bezier(0.93, 0.4, 0.23, 0.67);
+$in-out-transition-fast-2: cubic-bezier(0.67, 0.57, 0, 0.96);
