@@ -4,9 +4,41 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "clean": "del-cli dist",
+    "eleventy:default": "npx eleventy",
+    "eleventy:watch": "npx eleventy --watch",
+    "styles:prod": "node-sass src/assets/styles/ --output dist/assets/styles/ && postcss ./dist/assets/styles/*.css --replace",
+    "styles:dev": "node-sass src/assets/styles/ --output dist/assets/styles/ --source-map true --source-map-contents true && postcss ./dist/assets/styles/*.css --replace",
+    "scripts:prod": "webpack --mode=production",
+    "scripts:dev": "webpack --mode=development",
+    "serve": "light-server -c .lightserverrc",
+    "dev": "npm-run-all clean styles:dev scripts:dev eleventy:default --parallel eleventy:watch serve --print-label",
+    "build": "cross-env NODE_ENV=production run-s clean styles:prod scripts:prod eleventy:default --print-label"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "@11ty/eleventy": "^0.11.1",
+    "@11ty/eleventy-plugin-syntaxhighlight": "^3.0.1",
+    "@babel/core": "^7.10.1",
+    "@babel/preset-env": "^7.10.1",
+    "autoprefixer": "^9.8.0",
+    "babel-loader": "^8.1.0",
+    "cssnano": "^4.1.10",
+    "cssnano-preset-advanced": "^4.0.7",
+    "del-cli": "^3.0.1",
+    "light-server": "^2.6.4",
+    "node-sass": "^4.14.1",
+    "npm-run-all": "^4.1.5",
+    "postcss-cli": "^7.1.1",
+    "webpack": "^4.43.0",
+    "webpack-cli": "^3.3.11"
+  },
+  "dependencies": {
+    "cross-env": "^7.0.2",
+    "focus-visible": "^5.1.0",
+    "html-minifier": "^4.0.0",
+    "moment": "^2.27.0"
+  }
 }
